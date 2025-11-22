@@ -5,12 +5,25 @@
   <title>أبحث عن زوجة نجدية محافظة جميلة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- خط حديث من Google Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg-page: #f5f5f9;
+      --bg-card: #ffffff;
+      --border-subtle: #e4e4ec;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #111827;
+      --radius-card: 24px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --chip-bg: #f4f4ff;
+      --chip-border: #d4d4ff;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,113 +31,322 @@
     }
 
     body {
-      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: #ffffff;
-      color: #222;
+      font-family: "Changa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
       line-height: 1.9;
     }
 
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 12px;
+    }
+
     .wrapper {
+      width: 100%;
       max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 16px 60px;
-      text-align: center;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-subtle);
+      padding: 24px 18px 26px;
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 28px 30px 30px;
+      }
+    }
+
+    header {
+      text-align: right;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ededf4;
+      padding-bottom: 16px;
+    }
+
+    .badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
     h1 {
-      font-size: clamp(26px, 4vw, 38px);
+      font-size: clamp(20px, 3vw, 24px);
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .lead {
-      font-size: 17px;
-      max-width: 720px;
-      margin: 0 auto;
+      font-size: 14px;
+      color: var(--text-muted);
+      white-space: pre-line;
     }
 
-    section {
-      margin-top: 70px;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 24px;
-      font-weight: 700;
-    }
-
-    ul {
-      list-style-position: inside;
-      text-align: right;
-      display: inline-block;
-      font-size: 18px;
-    }
-
-    li + li {
+    .reward {
       margin-top: 10px;
-    }
-
-    .cta-wrapper {
-      margin-top: 32px;
-    }
-
-    .btn-email {
+      font-size: 13px;
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 8px 10px;
+      border: 1px dashed #d1d5db;
       display: inline-block;
-      padding: 12px 30px;
-      border-radius: 999px;
-      background-color: #111;
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
+    }
+
+    .reward strong {
       font-weight: 600;
     }
 
+    .sections {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    section {
+      text-align: right;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2 span.emoji {
+      font-size: 17px;
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4f46e5;
+    }
+
+    .me-box {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      background: #fcfcff;
+      padding: 10px 12px 10px;
+      font-size: 13px;
+    }
+
+    .me-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .me-tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #111827;
+      color: #f9fafb;
+      font-size: 12px;
+    }
+
+    .me-text {
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .me-private {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .contact-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .email-box {
+      flex: 1;
+      min-width: 0;
+      font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+      direction: ltr;
+      text-align: left;
+      padding: 7px 9px;
+      border-radius: 10px;
+      border: 1px dashed #d1d5db;
+      background: #f9fafb;
+      color: #111827;
+      overflow-wrap: anywhere;
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.12s ease, transform 0.12s ease,
+                  box-shadow 0.12s ease;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+      white-space: nowrap;
+    }
+
     .btn-email:hover {
-      opacity: 0.9;
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.5);
     }
 
     footer {
-      margin-top: 60px;
-      font-size: 13px;
-      color: #777;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px 16px 24px;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-email {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>أبحث عن زوجة نجدية محافظة جميلة</h1>
-      <p class="lead">
-        استهلكت في أهم مسعى في حياتي (ايجاد الزوجة المناسبة) سنين عددا.
+  <div class="page">
+    <div class="wrapper">
+      <div class="card">
+        <header>
+          
+
+          <h1>أبحث عن زوجة نجدية محافظة جميلة</h1>
+
+          
+          <p class="lead">
+استهلكت في أهم مسعى في حياتي (ايجاد الزوجة المناسبة) سنين عددا.
 بحثت بالطريقة التقليدية وبالتطبيقات ولم أوفق حتى الآن.
 ولهذا ارتأيت أن أوسع دائرة البحث، وأفعل كل الأسباب الممكنة.
 
 إن كنت تعرف أحدًا تنطبق عليه المواصفات التالية، تواصل معي بالايميل، وفي حال كتب الله التوفيق وتم الزواج فلك أجر جمع راسين بالحلال و ١٠ الاف ريال سعودي.
-      </p>
+          </p>
+        </header>
 
-      
-    </header>
+        <div class="sections">
 
-    <section>
-      <h2>المواصفات المطلوبة</h2>
-      <ul>
-        <li>حضرية، نجدية، قبيلية</li>
-        <li>محافظة، عاقلة</li>
-        <li>تقوم بالمنزل</li>
-        <li>أصغر من ٢٦ سنة</li>
-        <li>لم يسبق لها الزواج</li>
-        <li>جميلة</li>
-        <li>بيضاء</li>
-        <li>نحيفة (ليست عريضة أو جبرة)</li>
-      </ul>
-    </section>
+          <section>
+            <h2><span class="emoji">✨</span> <span>المواصفات المطلوبة</span></h2>
 
-    <div class="cta-wrapper">
-        <a class="btn-email" href="mailto:lookingforsaudiwife@gmail.com">
-          تواصل بالإيميل
-        </a>
+         
+            <div class="chips">
+              <div class="chip"><span class="chip-dot"></span><span>حضرية، نجدية، قبيلية</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>محافظة، عاقلة</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>تقوم بالمنزل</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>أصغر من ٢٦ سنة</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>لم يسبق لها الزواج</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>جميلة</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>بيضاء</span></div>
+              <div class="chip"><span class="chip-dot"></span><span>نحيفة (ليست عريضة أو جبرة)</span></div>
+            </div>
+          </section>
+
+          <section>
+            <h2><span class="emoji">🧾</span> <span>مواصفاتي</span></h2>
+
+            <div class="me-box">
+              <div class="me-row">
+                
+                <span class="me-text">محافظ، موظف في شركة شبه حكومية، عمري ٢٦ سنة</span>
+              </div>
+              <div class="me-private">
+                باقي المواصفات بعد التواصل للخصوصية
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2><span class="emoji">📩</span> <span>طريقة التواصل</span></h2>
+
+            
+            <p class="contact-text">
+التواصل عن طريق الإيميل الموضح في الأسفل.
+            </p>
+
+            <div class="contact-row">
+              <div class="email-box">lookingforsaudiwife@gmail.com</div>
+              <a class="btn-email" href="mailto:lookingforsaudiwife@gmail.com">إرسال إيميل الآن</a>
+            </div>
+
+          </section>
+
+        </div>
+
+        <footer>
+          هذه الصفحة شخصية لغرض الزواج الشرعي فقط.
+        </footer>
+
       </div>
-    
+    </div>
   </div>
 </body>
 </html>
